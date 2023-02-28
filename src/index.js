@@ -1,19 +1,22 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import reportWebVitals from "./reportWebVitals";
 
-import App from './App';
-import { BrowserRouter } from 'react-router-dom';
-import './index.css';
+import App from "./App";
+import { BrowserRouter } from "react-router-dom";
+import "./index.css";
 
-import { createStore } from 'redux';
-import { Provider } from 'react-redux';
-import reducer from './reducers';
+import { createStore } from "redux";
+import { Provider } from "react-redux";
+import reducer from "./reducers";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const depo = createStore(reducer);
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
-    <App />
+    <Provider store={depo}>
+      <App />
+    </Provider>
   </BrowserRouter>
 );
 
