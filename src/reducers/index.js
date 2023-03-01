@@ -1,5 +1,10 @@
-import { combineReducers } from 'redux';
+import { combineReducers } from "redux";
+import favoritesReducer from "./favoritesReducer";
 
-import movieReducer from './movieReducer';
+import movieReducer from "./movieReducer";
 
-export default movieReducer;
+const rootReducers = combineReducers({
+  favorite: favoritesReducer,
+  move: movieReducer,
+});
+export default rootReducers;

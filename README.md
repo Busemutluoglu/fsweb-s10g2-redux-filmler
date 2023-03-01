@@ -57,14 +57,14 @@ Bu projede, küçük bir film veritabanı içeren bir web uygulamasında çalı�
 
 > _Tamam! Artık film reducerı tamamladığınızdan, en sevdiğiniz film işlevselliğini işlemek için sıfırdan bir reducer oluşturma şansınız var. Reducerları birleştirme konusunda çalışacağız._
 
-- [ ] Favoriler için iş mantığını işlemek için bir reducer dosyası oluşturun. Bu dosyada kullanacağınız InitialState objenize aşağıdaki değerlerini ekleyin:
+- [*] Favoriler için iş mantığını işlemek için bir reducer dosyası oluşturun. Bu dosyada kullanacağınız InitialState objenize aşağıdaki değerlerini ekleyin:
 
   - favorites: film nesnesini içeren bir dizi (şimdilik boş)
   - displayFavorites: Uygulamada favorilerin görüntülendiği yan alanın gösterim değerini (göster/gizle) tutan bir boolean
 
-- [ ] **Yeni reducerınızı ./reducers/index.js dosyasına import edin.** Başlangıç ta, switch deyimine yalnızca bir default case ekleyin.
+- [*] **Yeni reducerınızı ./reducers/index.js dosyasına import edin.** Başlangıç ta, switch deyimine yalnızca bir default case ekleyin.
 
-- [ ] **reducers/index.js'de hem filmleri hem de favori filmleri redux'a bağlamak için CombineReducers metodunu kullanın.**
+- [*] **reducers/index.js'de hem filmleri hem de favori filmleri redux'a bağlamak için CombineReducers metodunu kullanın.**
 
 - [ ] **Film işlevlerinizin artık çalışmadığına dikkat edin. Neden?** Film reducera bağlı bileşenin tekrar çalışmasını sağlamak için gerekli değişiklikleri yapın.
 

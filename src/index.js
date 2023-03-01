@@ -9,6 +9,7 @@ import "./index.css";
 import { createStore } from "redux";
 import { Provider } from "react-redux";
 import reducer from "./reducers";
+import rootReducers from "./reducers";
 
 const depo = createStore(reducer);
 const root = ReactDOM.createRoot(document.getElementById("root"));
