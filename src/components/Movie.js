@@ -1,27 +1,17 @@
 import React from "react";
 import { useParams, useHistory } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { ADD_FAVORITE, REMOVE_FAVORITE } from "../actions/favoritesActions";
 import { ADD_MOVIE, DELETE_MOVIE } from "../actions/movieActions";
+
 const Movie = (props) => {
   const { id } = useParams();
-  /*  const { push } = useHistory(); */
+  const { push } = useHistory();
 
-  const movies = [];
+  const movies = useSelector((state) => state.movie.movies);
   const movie = movies.find((movie) => movie.id === Number(id));
   const dispatch = useDispatch();
-  function eventHandlerdelete() {
-    dispatch({ type: DELETE_MOVIE });
-  }
 
-  let history = useHistory();
-
-  function handleClick() {
-    history.push("/movies");
-  }
-
-  function eventHandlerAdd() {
-    dispatch({ type: ADD_MOVIE });
-  }
   return (
     <div className="bg-white rounded-md shadow flex-1">
       <div className="p-5 pb-3 border-b border-zinc-200">
@@ -51,13 +41,17 @@ const Movie = (props) => {
       </div>
       <div className="px-5 py-3 border-t border-zinc-200 flex justify-end gap-2">
         <button
-          onClick={eventHandlerdelete}
+          onClick={() => {
+            dispatch(DELETE_MOVIE(movie.id));
+            dispatch(REMOVE_FAVORITE(movie.id));
+            push("/movies");
+          }}
           type="button"
           className="myButton bg-red-600 hover:bg-red-500">
           Sil
         </button>
         <button
-          onClick={handleClick}
+          onClick={() => dispatch(ADD_FAVORITE(movie))}
           className="myButton bg-blue-600 hover:bg-blue-500 ">
           Favorilere ekle
         </button>
